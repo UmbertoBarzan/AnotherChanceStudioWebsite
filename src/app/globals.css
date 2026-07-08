@@ -1,0 +1,38 @@
+@import "./base.css";
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-synthesis: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background: #ffffff;
+  color: #111827;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(15, 23, 42, 0.12);
+  color: #111827;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
