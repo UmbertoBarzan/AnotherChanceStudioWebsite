@@ -29,17 +29,24 @@ const Header = ({
 
   // Container
   return (
-    <Container>
-      <div className="flex items-center justify-between">
+    <Container className="px-4 sm:px-6 lg:px-8">
+      <div className="flex min-w-0 items-center justify-between gap-x-3">
         {/* Logo */}
-        <Link href={"/"} aria-label="Home">
-          <Logo invert={invert}>AnotherChanceStudio</Logo>
+        <Link href={"/"} aria-label="Home" className="min-w-0 flex-1">
+          <Logo
+            invert={invert}
+            className="block max-w-[13rem] truncate text-lg sm:max-w-none sm:text-2xl"
+          >
+            AnotherChanceStudio
+          </Logo>
         </Link>
-        <div className="flex items-center gap-x-4">
+        <div className="flex shrink-0 items-center gap-x-2 sm:gap-x-4">
           <LanguageSwitcher />
-          <Button href={"/#contact"} invert={invert}>
-            {t.nav.contact}
-          </Button>
+          <div className="hidden sm:block">
+            <Button href={"/#contact"} invert={invert}>
+              {t.nav.contact}
+            </Button>
+          </div>
           <button
             ref={toggleRef}
             type="button"
@@ -83,7 +90,7 @@ const NavigationItem = ({ href, children }) => {
       className="group relative isolate -mx-6 bg-neutral-950 px-6 py-10 even:mt-px sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-neutral-800 sm:even:pl-16"
     >
       {children}
-      <span className="absolute inset-y-0 -z-10 w-screen bg-neutral-900 opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
+      <span className="hidden sm:absolute sm:inset-y-0 sm:-z-10 sm:block sm:w-screen sm:bg-neutral-900 sm:opacity-0 sm:transition sm:group-odd:right-0 sm:group-even:left-0 sm:group-hover:opacity-100" />
     </Link>
   );
 };
